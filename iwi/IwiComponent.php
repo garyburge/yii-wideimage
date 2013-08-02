@@ -1,7 +1,13 @@
 <?php
 
-Yii::import('application.extensions.iwi.Iwi');
-Yii::import('application.extensions.iwi.vendors.image.CImageComponent');
+
+// Yii::import('application.extensions.iwi.Iwi');
+// GLB: change to vendor directory alias
+Yii::import('wideimage.Iwi');
+
+// Yii::import('application.extensions.iwi.vendors.image.CImageComponent');
+// GLB: change to vendor directory alias
+Yii::import('wideimage.vendors.image.CImageComponent');
 
 /**
  * Description of CImageComponent

@@ -1,7 +1,12 @@
 <?php
 
-Yii::import('application.extensions.iwi.vendors.image.Image');
-Yii::import('application.extensions.iwi.models.Storage');
+// Yii::import('application.extensions.iwi.vendors.image.Image');
+// GLB: change to vendor directory alias
+Yii::import('wideimage.vendors.image.Image');
+
+// Yii::import('application.extensions.iwi.models.Storage');
+// GLB: change to vendor directory alias
+Yii::import('wideimage.iwi.models.Storage');
 
 class Iwi extends Image
 {
@@ -208,14 +213,18 @@ class Iwi extends Image
         $driver = 'Image_' . ucfirst($this->config['driver']) . '_Driver';
 
         // Load the driver
-        Yii::import("application.extensions.iwi.vendors.image.drivers.$driver");
+        // Yii::import("application.extensions.iwi.vendors.image.drivers.$driver");
+        // GLB: change to vendor directory alias
+        Yii::import("wideimage.vendors.image.drivers.$driver");
 
         // Initialize the driver
         $this->driver = new $driver($this->config['params']);
 
         // Validate the driver
         if (!($this->driver instanceof Image_Driver))
-            throw new CException('image driver must be implement Image_Driver class');
+            // throw new CException('image driver must be implement Image_Driver class');
+            // GLB: fixed grammar
+            throw new CException('image driver must implement the Image_Driver class');
     }
 
 
