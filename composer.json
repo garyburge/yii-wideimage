@@ -1,0 +1,17 @@
+{
+    "name": "garyburge/yii-wideimage",
+    "description": "A fork of Idol-IT/iwi to provide Composer compatibility",
+    "keywords": ["yii","extension"],
+    "homepage": "https://github.com/garyburge/yii-wideimage",
+    "type": "yii-extension",
+    "license": "New BSD License",
+    "version": "dev-master",
+    "authors": [
+        {
+            "name": "monkeymafia"
+        }
+    ],
+    "require": {
+        "php": ">=5.1.0"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "yii-wideimage",
+    "description": "A fork of Idol-IT/iwi to provide Composer compatibility",
+    "author": "monkeymafia",
+    "contributors": [
+        {
+            "name": "monkeymafia"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/garyburge/yii-wideimage.git"
+    },
+}

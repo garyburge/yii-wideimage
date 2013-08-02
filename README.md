@@ -1,7 +1,7 @@
 iwi
 ========
 
-Forked from Idol-IT/iwi and renamed to yii-wideimage, to provide Composer compatability.
+Forked from Idol-IT/iwi and renamed to yii-wideimage, to provide Composer compatibility.
 
 Idol Web Image module for adaptive image resizing and caching in database, based on Kohana Image module.
 
@@ -54,7 +54,7 @@ Deprecated
 ====================
     $this->widget("ext.iwi.Resize");
 
-Widget Resize is now derpecated.  
+Widget Resize is now derpecated.
 Use `adaptive()` method now.
 
 
