@@ -185,7 +185,7 @@ class Image_GD_Driver extends Image_Driver {
 		// Get the current width and height
 		$width = imagesx($this->tmp_image);
 		$height = imagesy($this->tmp_image);
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): width='$width' - height:'$height'", 'user');
+        Yii::trace(__METHOD__ . " (" . __LINE__ . "): current width='$width' - current height:'$height'", 'user');
 
 		// Create the temporary image to copy to
 		$img = $this->imagecreatetransparent($properties['width'], $properties['height']);
