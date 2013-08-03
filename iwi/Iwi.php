@@ -6,7 +6,7 @@ Yii::import('wideimage.vendors.image.Image');
 
 // Yii::import('application.extensions.iwi.models.Storage');
 // GLB: change to vendor directory alias
-Yii::import('wideimage.iwi.models.Storage');
+Yii::import('wideimage.models.Storage');
 
 class Iwi extends Image
 {

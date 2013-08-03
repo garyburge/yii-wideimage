@@ -1,6 +1,8 @@
 <?php
 
-Yii::import('application.extensions.iwi.vendors.image.Image');
+// GLB user vendor vased alias
+// Yii::import('application.extensions.iwi.vendors.image.Image');
+Yii::import('wideimage.vendors.image.Image');
 
 /**
  * Description of CImageComponent

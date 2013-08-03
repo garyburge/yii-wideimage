@@ -10,7 +10,10 @@
  * @copyright  (c) 2007-2008 Kohana Team
  * @license    http://kohanaphp.com/license.html
  */
-Yii::import('application.extensions.iwi.vendors.image.CArray');
+
+// GLB: switch to vendor directory alias
+//Yii::import('application.extensions.iwi.vendors.image.CArray');
+Yii::import('wideimage.vendors.image.CArray');
 
 class Image_GD_Driver extends Image_Driver {
 
@@ -214,11 +217,11 @@ class Image_GD_Driver extends Image_Driver {
 			// Recalculate the percentage to a pixel size
 			$properties['height'] = round($height * (substr($properties['height'], 0, -1) / 100));
 		}
-		
+
 		// Recalculate the width and height, if they are missing
 		empty($properties['width'])  and $properties['width']  = round($width * $properties['height'] / $height);
 		empty($properties['height']) and $properties['height'] = round($height * $properties['width'] / $width);
-		
+
 		if ($properties['master'] === Image::AUTO)
 		{
 			// Change an automatic master dim to the correct type
