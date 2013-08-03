@@ -178,12 +178,14 @@ class Image_GD_Driver extends Image_Driver {
 
 	public function crop($properties)
 	{
+        Yii::trace(__METHOD__ . " (" . __LINE__ . "): properties=".print_r($properties, true), 'user');
 		// Sanitize the cropping settings
 		$this->sanitize_geometry($properties);
 
 		// Get the current width and height
 		$width = imagesx($this->tmp_image);
 		$height = imagesy($this->tmp_image);
+        Yii::trace(__METHOD__ . " (" . __LINE__ . "): width='$width' - height:'$height'", 'user');
 
 		// Create the temporary image to copy to
 		$img = $this->imagecreatetransparent($properties['width'], $properties['height']);
@@ -196,6 +198,7 @@ class Image_GD_Driver extends Image_Driver {
 			$this->tmp_image = $img;
 		}
 
+        Yii::trace(__METHOD__ . " (" . __LINE__ . "): status=".($status ? 'true' : 'false'), 'user');
 		return $status;
 	}
 
