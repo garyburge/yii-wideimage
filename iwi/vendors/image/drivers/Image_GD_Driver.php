@@ -12,7 +12,6 @@
  */
 
 // GLB: switch to vendor directory alias
-//Yii::import('application.extensions.iwi.vendors.image.CArray');
 Yii::import('wideimage.vendors.image.CArray');
 
 class Image_GD_Driver extends Image_Driver {

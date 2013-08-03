@@ -1,7 +1,6 @@
 <?php
 
 // GLB: use vendor-based alias
-// Yii::import('application.extensions.iwi.vendors.image.Image_Driver');
 Yii::import('wideimage.vendors.image.Image_Driver');
 
 /**
@@ -123,7 +122,6 @@ class Image {
 
         // Load the driver
         // GLB: use vendor alias
-        //Yii::import("application.extensions.iwi.vendors.image.drivers.$driver");
         Yii::import("wideimage.vendors.image.drivers.$driver");
 
 		// Initialize the driver

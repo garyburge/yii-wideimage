@@ -1,10 +1,8 @@
 <?php
 
-// Yii::import('application.extensions.iwi.vendors.image.Image');
 // GLB: change to vendor directory alias
 Yii::import('wideimage.vendors.image.Image');
 
-// Yii::import('application.extensions.iwi.models.Storage');
 // GLB: change to vendor directory alias
 Yii::import('wideimage.models.Storage');
 
@@ -213,7 +211,6 @@ class Iwi extends Image
         $driver = 'Image_' . ucfirst($this->config['driver']) . '_Driver';
 
         // Load the driver
-        // Yii::import("application.extensions.iwi.vendors.image.drivers.$driver");
         // GLB: change to vendor directory alias
         Yii::import("wideimage.vendors.image.drivers.$driver");
 

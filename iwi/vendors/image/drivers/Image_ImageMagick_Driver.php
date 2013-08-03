@@ -12,7 +12,6 @@
  */
 
 // GLB: use alias for vendor directories
-//Yii::import('application.extensions.iwi.vendors.image.CArray');
 Yii::import('wideimage.vendors.image.CArray');
 
 class Image_ImageMagick_Driver extends Image_Driver {
