@@ -178,14 +178,12 @@ class Image_GD_Driver extends Image_Driver {
 
 	public function crop($properties)
 	{
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): properties=".print_r($properties, true), 'user');
 		// Sanitize the cropping settings
 		$this->sanitize_geometry($properties);
 
 		// Get the current width and height
 		$width = imagesx($this->tmp_image);
 		$height = imagesy($this->tmp_image);
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): current width='$width' - current height:'$height'", 'user');
 
 		// Create the temporary image to copy to
 		$img = $this->imagecreatetransparent($properties['width'], $properties['height']);
@@ -198,17 +196,14 @@ class Image_GD_Driver extends Image_Driver {
 			$this->tmp_image = $img;
 		}
 
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): status=".($status ? 'true' : 'false'), 'user');
-		return $status;
+        return $status;
 	}
 
 	public function resize($properties)
 	{
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): properties=".print_r($properties, true), 'user');
 		// Get the current width and height
 		$width = imagesx($this->tmp_image);
 		$height = imagesy($this->tmp_image);
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): width='$width' - height:'$height'", 'user');
 
 		if (substr($properties['width'], -1) === '%')
 		{
@@ -225,7 +220,6 @@ class Image_GD_Driver extends Image_Driver {
 		// Recalculate the width and height, if they are missing
 		empty($properties['width'])  and $properties['width']  = round($width * $properties['height'] / $height);
 		empty($properties['height']) and $properties['height'] = round($height * $properties['width'] / $width);
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): properties=".print_r($properties, true), 'user');
 
 		if ($properties['master'] === Image::AUTO)
 		{
@@ -282,7 +276,6 @@ class Image_GD_Driver extends Image_Driver {
 		$img = $this->imagecreatetransparent($properties['width'], $properties['height']);
 
 		// Execute the resize
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): properties=".print_r($properties, true), 'user');
 		if ($status = imagecopyresampled($img, $this->tmp_image, 0, 0, 0, 0, $properties['width'], $properties['height'], $width, $height))
 		{
 			// Swap the new image for the old one
@@ -290,7 +283,6 @@ class Image_GD_Driver extends Image_Driver {
 			$this->tmp_image = $img;
 		}
 
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): status=".($status ? 'true' : 'false'), 'user');
 		return $status;
 	}
 

@@ -320,7 +320,6 @@ class Image {
 	 */
 	public function save($new_image = FALSE, $chmod = 0644, $keep_actions = FALSE)
 	{
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): new_image='$new_image' - keep_actions=".($keep_actions ? 'true' : 'false'), 'user');
 		// If no new image is defined, use the current image
 		empty($new_image) and $new_image = $this->image['file'];
 
@@ -331,10 +330,10 @@ class Image {
 		// Normalize the path
 		$dir = str_replace('\\', '/', realpath($dir)).'/';
 
-		if ( ! is_writable($dir))
+		if ( ! is_writable($dir)) {
 			throw new CException('image directory unwritable');
+        }
 
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): calling process() actions=",print_r($this->actions, true), 'user');
 		if ($status = $this->driver->process($this->image, $this->actions, $dir, $file))
 		{
 			if ($chmod !== FALSE)
@@ -348,7 +347,6 @@ class Image {
 		if ($keep_actions === FALSE)
 			$this->actions = array();
 
-        Yii::trace(__METHOD__ . " (" . __LINE__ . "): status=".($status ? 'true' : 'false'), 'user');
 		return $status;
 	}
 
